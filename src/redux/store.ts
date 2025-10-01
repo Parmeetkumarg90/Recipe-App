@@ -3,10 +3,14 @@ import storage from 'redux-persist/es/storage';
 import persistStore from "redux-persist/es/persistStore";
 import persistReducer from "redux-persist/lib/persistReducer";
 import recipeReducer from '@/redux/slices/recipe';
+import currentUserReducer from '@/redux/slices/currentUser';
+import usersReducer from '@/redux/slices/users';
 import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
 const rootReducer = combineReducers({
     recipes: recipeReducer,
+    currentUser: currentUserReducer,
+    users: usersReducer,
 });
 
 const persistConfig = {
