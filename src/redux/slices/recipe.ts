@@ -10,7 +10,12 @@ const recipeSlice = createSlice({
     reducers: {
         addRecipes: (state, action: PayloadAction<recipeInterface[]>) => {
             const newList = action.payload || [];
-            state = [...state, ...newList];
+            const duplicateElements = [...state, ...newList];
+            state = duplicateElements.filter(
+                (currentRecipe, index, self) => index === self.findIndex(eachRecipe => eachRecipe.id === currentRecipe.id)
+            ); // remove duplicate recipes if present
+            // console.log("new state: ", state)
+            return state;
         }
     }
 });

@@ -4,6 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SnackbarProvider } from 'notistack';
 import Header from "@/components/header/header";
+import { Provider } from 'react-redux';
+import { PersistGate } from "redux-persist/integration/react";
+import { persister, store } from '@/redux/store';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,12 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SnackbarProvider maxSnack={3} autoHideDuration={1500}>
-        <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <Header />
-          {children}
-        </body>
-      </SnackbarProvider>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <SnackbarProvider maxSnack={3} autoHideDuration={1500}>
+          <Provider store={store}>
+            <PersistGate loading={null} persistor={persister}>
+              <Header />
+              {children}
+            </PersistGate>
+          </Provider>
+        </SnackbarProvider>
+      </body>
     </html>
   );
 }

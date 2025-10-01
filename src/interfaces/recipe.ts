@@ -17,4 +17,8 @@ interface recipeInterface {
     userId: number,
 }
 
-export type { recipeInterface };
+interface recipePageProps {
+    params: { recipeId: string };
+}
+
+export type { recipeInterface, recipePageProps };

@@ -13,9 +13,9 @@ const getAllProducts = async (skip: number) => {
 }
 
 // get specific product
-const getProduct = async (productId: string) => {
+const getProduct = async (recipeId: string) => {
     try {
-        const result = await fetch(`https://dummyjson.com/products/${productId}`);
+        const result = await fetch(`https://dummyjson.com/recipes/${recipeId}`);
         const processedData = await result.json();
         return processedData;
     }
