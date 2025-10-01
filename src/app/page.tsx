@@ -28,7 +28,7 @@ const RecipeCards = () => {
   useEffect(() => {
     const calculateSkip = (currentPage - 1) * 10;
     setLoading(true);
-    if (calculateSkip + 10 <= storedProducts.length) {
+    if (calculateSkip < storedProducts.length) {
       const currentPageRecipes = [];
       for (let index = calculateSkip; index < calculateSkip + 10; index++) {
         currentPageRecipes.push(storedProducts[index]);
@@ -40,7 +40,7 @@ const RecipeCards = () => {
       }, 500);
     }
     else {
-      getProducts((currentPage - 1) * 10);
+      getProducts(calculateSkip);
     }
   }, [currentPage]);
 
