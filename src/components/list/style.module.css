@@ -9,3 +9,7 @@
     justify-content: center;
     align-items: center;
 }
+
+.paddingY {
+    padding: 2% 0 2% 0;
+}

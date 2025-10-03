@@ -76,7 +76,7 @@ const RecipeCards = () => {
 
   return (
     <Stack>
-      <RecipeList data={productList} loading={isLoading} />
+      <RecipeList data={productList} loading={isLoading} isBookmarkRecipes={false} />
       <Pagination count={totalProducts} page={currentPage} onChange={handlePageChange}
         color="primary" variant="outlined" shape="rounded" className={`${style.pagination}`}
         renderItem={(item) => (

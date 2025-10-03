@@ -28,6 +28,18 @@
   color: #fff;
 }
 
+.blackBackground {
+  background-color: #000;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
 }

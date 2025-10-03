@@ -31,7 +31,6 @@ const CreateRecipe = () => {
         if (isValid.success) {
             const userDetail = users.find((eachUser) => (eachUser.email === user.email || eachUser.username === user.username) && eachUser.password === user.password);
             if (logInUserSchema.safeParse(userDetail).success) {
-                dispatch(addCredentials(userDetail!));
                 return {
                     success: true, email: userDetail?.email === user.email, username: userDetail?.username === user.username
                 };

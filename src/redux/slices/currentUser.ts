@@ -13,9 +13,11 @@ const logInUserSlice = createSlice({
     initialState,
     reducers: {
         addCredentials: (state, action: PayloadAction<logInUserInterface>) => {
-            state.email = action.payload.email;
-            state.username = action.payload.username;
-            state.password = action.payload.password;
+            state = {
+                email: action.payload.email,
+                username: action.payload.username,
+                password: action.payload.password,
+            }
         },
         logout: (state) => state = initialState
     }

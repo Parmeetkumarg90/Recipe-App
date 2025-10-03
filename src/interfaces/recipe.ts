@@ -15,10 +15,21 @@ interface recipeInterface {
     servings: number,
     tags: string[],
     userId: number,
+    isBookMark?: boolean,
 }
 
 interface recipePageProps {
     params: { recipeId: string };
 }
 
-export type { recipeInterface, recipePageProps };
+interface bookMarkInterface {
+    userEmail: string,
+    recipeIds: number[],
+};
+
+interface addBookMarkInterface {
+    userEmail: string,
+    recipeId: number,
+};
+
+export type { recipeInterface, recipePageProps, bookMarkInterface, addBookMarkInterface };

@@ -6,11 +6,13 @@ import recipeReducer from '@/redux/slices/recipe';
 import currentUserReducer from '@/redux/slices/currentUser';
 import usersReducer from '@/redux/slices/users';
 import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
+import bookMarkRecipeReducer from '@/redux/slices/bookmark-recipe';
 
 const rootReducer = combineReducers({
     recipes: recipeReducer,
     currentUser: currentUserReducer,
     users: usersReducer,
+    bookmarkRecipe: bookMarkRecipeReducer,
 });
 
 const persistConfig = {
