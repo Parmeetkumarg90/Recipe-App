@@ -88,7 +88,7 @@ const RecipeList = ({ data, loading, isBookmarkRecipes }: { data: recipeInterfac
             {!isLoading &&
                 <>
                     {
-                        recipes?.map((item) => {
+                        recipes.length ? recipes?.map((item) => {
                             return (
                                 < Card className={`${style.Card}`} key={item.id}>
                                     <Typography variant='h5' gutterBottom sx={{ textAlign: "center" }}>
@@ -110,7 +110,8 @@ const RecipeList = ({ data, loading, isBookmarkRecipes }: { data: recipeInterfac
                                     </Button>
                                 </Card >
                             )
-                        })
+                        }) :
+                            <Typography sx={{ color: 'white', mb: 1.5 }}>{isBookmarkRecipes ? "You have add any recipe to Bookmark" : "No more cecipes"}</Typography>
                     }
                 </>
             }

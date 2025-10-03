@@ -12,6 +12,7 @@ const usersSlice = createSlice({
             const newState = [...state];
             newState.push(action.payload);
             state = newState;
+            return state;
         },
     }
 });

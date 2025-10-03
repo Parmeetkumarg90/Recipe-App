@@ -10,14 +10,6 @@
     text-align: center;
 }
 
-@media screen and (max-width:600px) {
-    .card {
-        width: 80%;
-        padding: 5px;
-        margin-top: 50px;
-    }
-}
-
 .input_card {
     width: 100%;
     gap: 8px;
@@ -34,16 +26,48 @@
     /* display: ; */
 }
 
+.pX {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
 .pY {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.mX {
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .mY {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .border {
     border: 1px solid black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width:600px) {
+    .card {
+        width: 80%;
+        padding: 5px;
+        margin-top: 50px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }

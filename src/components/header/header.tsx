@@ -70,74 +70,74 @@ const Header = () => {
                         onClose={handleClose}
                         className={`${style.absolute} `}
                     >
-                        <MenuItem onClick={handleClose}>
-                            <Link href="/login" className={`${style.blackBackground}`}>
-                                <Typography
-                                    variant="h6"
-                                    component="div"
-                                    className={` ${style.textStyle} ${style.block} ${style.flexGrow} `}
-                                >
-                                    <Tooltip title="Login">
+                        <Tooltip title="Login">
+                            <MenuItem onClick={handleClose}>
+                                <Link href="/login" className={`${style.blackBackground}`}>
+                                    <Typography
+                                        variant="h6"
+                                        component="div"
+                                        className={` ${style.textStyle} ${style.block} ${style.flexGrow} `}
+                                    >
                                         <LoginIcon />
-                                    </Tooltip>
-                                </Typography>
-                            </Link>
-                        </MenuItem>
+                                    </Typography>
+                                </Link>
+                            </MenuItem>
+                        </Tooltip>
 
-                        <MenuItem onClick={handleClose}>
-                            <Link href="/register" className={`${style.blackBackground}`}>
-                                <Typography
-                                    variant="h6"
-                                    component="div"
-                                    className={` ${style.textStyle} ${style.block} ${style.flexGrow}`}
-                                >
-                                    <Tooltip title="Register">
+                        <Tooltip title="Register">
+                            <MenuItem onClick={handleClose}>
+                                <Link href="/register" className={`${style.blackBackground}`}>
+                                    <Typography
+                                        variant="h6"
+                                        component="div"
+                                        className={` ${style.textStyle} ${style.block} ${style.flexGrow}`}
+                                    >
                                         <PersonAddAltIcon />
-                                    </Tooltip>
-                                </Typography>
-                            </Link>
-                        </MenuItem>
+                                    </Typography>
+                                </Link>
+                            </MenuItem>
+                        </Tooltip>
 
-                        <MenuItem onClick={handleClose}>
-                            <Link href="/recipe/create" className={`${style.blackBackground}`}>
-                                <Typography
-                                    variant="h6"
-                                    component="div"
-                                    className={` ${style.textStyle} ${style.block} ${style.flexGrow}`}
-                                >
-                                    <Tooltip title="Create a new recipe">
+                        <Tooltip title="Create a new recipe">
+                            <MenuItem onClick={handleClose}>
+                                <Link href="/recipe/create" className={`${style.blackBackground}`}>
+                                    <Typography
+                                        variant="h6"
+                                        component="div"
+                                        className={` ${style.textStyle} ${style.block} ${style.flexGrow}`}
+                                    >
                                         <AddCircleOutlineIcon />
-                                    </Tooltip>
-                                </Typography>
-                            </Link>
-                        </MenuItem>
+                                    </Typography>
+                                </Link>
+                            </MenuItem>
+                        </Tooltip>
 
-                        <MenuItem onClick={handleClose} >
-                            <Link href="/recipe/bookmark" className={`${style.blackBackground}`}>
+                        <Tooltip title="Bookmark recipe">
+                            <MenuItem onClick={handleClose} >
+                                <Link href="/recipe/bookmark" className={`${style.blackBackground}`}>
+                                    <Typography
+                                        variant="h6"
+                                        component="div"
+                                        className={` ${style.textStyle} ${style.block} ${style.flexGrow}`}
+                                    >
+                                        <BookmarkIcon />
+                                    </Typography>
+                                </Link>
+                            </MenuItem>
+                        </Tooltip>
+
+                        <Tooltip title="Logout">
+                            <MenuItem onClick={handleClose}>
                                 <Typography
                                     variant="h6"
                                     component="div"
-                                    className={` ${style.textStyle} ${style.block} ${style.flexGrow}`}
+                                    className={` ${style.textStyle} ${style.block} ${style.flexGrow} ${style.pointer} ${style.blackBackground}`}
+                                    onClick={logoutUser}
                                 >
-                                    <Tooltip title="Bookmark recipe">
-                                        <BookmarkIcon />
-                                    </Tooltip>
-                                </Typography>
-                            </Link>
-                        </MenuItem>
-
-                        <MenuItem onClick={handleClose}>
-                            <Typography
-                                variant="h6"
-                                component="div"
-                                className={` ${style.textStyle} ${style.block} ${style.flexGrow} ${style.pointer} ${style.blackBackground}`}
-                                onClick={logoutUser}
-                            >
-                                <Tooltip title="Logout">
                                     <LogoutIcon />
-                                </Tooltip>
-                            </Typography>
-                        </MenuItem>
+                                </Typography>
+                            </MenuItem>
+                        </Tooltip>
                     </Menu>
                 </Grid>
             </Toolbar>
